@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const connectionURL = require('../config.js').secret
+const connectionURL = require('../config.js').connectionURL
 
 // revisa tu connectionURL aqui :-)
 
