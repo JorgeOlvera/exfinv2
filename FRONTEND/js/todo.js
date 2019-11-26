@@ -8,7 +8,7 @@ var todos = document.querySelectorAll("input[type=checkbox]");
 
 function loadTodos() {
   $.ajax({
-    url: 'http://localhost:3000/todos',
+    url: 'https://sol-ex-finalweb.herokuapp.com/todos',
     // url: 'https://tuapp.herokuapp.com/todos',
     headers: {
         'Content-Type':'application/json',
@@ -23,7 +23,7 @@ function loadTodos() {
         // aqui va su código para agregar los elementos de la lista
         console.log(data[i].description)
         // algo asi:
-        // addTodo(data[i]._id, data[i].description, data[i].completed)
+        addTodo(data[i]._id, data[i].description, data[i].completed)
         // no tienen que usar la funcion de addTodo, es un ejemplo
       }
     },
@@ -37,12 +37,12 @@ loadTodos()
 
 
 // o con jquery
-// $('input[name=newitem]').keypress(function(event){
-//     var keycode = (event.keyCode ? event.keyCode : event.which);
-//     if(keycode == '13'){
-//         $.ajax({})
-//     }
-// });
+$('input[name=newitem]').keypress(function(event){
+  var keycode = (event.keyCode ? event.keyCode : event.which);
+   if(keycode == '13'){
+       $.ajax({})
+     }
+});
 
 var input = document.querySelector("input[name=newitem]");
 
@@ -53,7 +53,7 @@ input.addEventListener('keypress', function (event) {
     };
     json_to_send = JSON.stringify(json_to_send);
     $.ajax({
-      url: 'http://localhost:3000/todos',
+      url: 'https://sol-ex-finalweb.herokuapp.com/todos',
       // url: 'https://tuapp.herokuapp.com/todos',
       headers: {
           'Content-Type':'application/json',
@@ -65,6 +65,10 @@ input.addEventListener('keypress', function (event) {
       success: function(data){
         console.log(data)
         // agregar código aqui para poner los datos del todolist en el el html
+        var node = document.createElement("LI")
+        var textnode = document.createTextNode(document.getElementById("newitem").value())
+        node.appendChild(textnode)
+        document.getElementById("todo-list").appendChild(node)
         
       },
       error: function(error_msg) {

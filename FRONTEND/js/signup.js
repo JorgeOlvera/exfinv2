@@ -11,7 +11,7 @@ $('#signup_button').on('click', function(){
   json_to_send = JSON.stringify(json_to_send);
 
   $.ajax({
-    url: 'http://localhost:3000/users',
+    url: 'https://sol-ex-finalweb.herokuapp.com/todos',
     // url: 'https://tuapp.herokuapp.com/users',
     headers: {
         'Content-Type':'application/json'
@@ -21,7 +21,7 @@ $('#signup_button').on('click', function(){
     data: json_to_send,
     success: function(data){
       alert("Usuario creado con exito");
-      console.log('success: '+ data);
+      console.log('success: ' + data);
       window.location = './index.html'
     },
     error: function(error_msg) {

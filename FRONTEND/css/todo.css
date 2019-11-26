@@ -84,3 +84,7 @@ input[type="text"]:focus {
   text-decoration: line-through;
   color: #8f919c; 
 }
+
+.hidden{
+  display: none;
+}

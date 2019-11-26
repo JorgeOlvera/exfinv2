@@ -79,6 +79,13 @@ button {
   border-radius: 25px;
 }
 
+.nice {
+  background: #a64bf4;
+  background: -webkit-linear-gradient(left, #38f0b3, #ff0000);;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bolder;
+}
+
 
 #signup_option {
   font-size: 13px;
