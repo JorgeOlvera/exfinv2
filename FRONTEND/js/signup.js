@@ -12,7 +12,7 @@ $('#signup_button').on('click', function(){
 
   $.ajax({
     url: 'https://sol-ex-finalweb.herokuapp.com/todos',
-    // url: 'https://tuapp.herokuapp.com/users',
+
     headers: {
         'Content-Type':'application/json'
     },
