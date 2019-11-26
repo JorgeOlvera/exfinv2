@@ -73,6 +73,10 @@ input.addEventListener('keypress', function (event) {
       },
       error: function(error_msg) {
         alert((error_msg['responseText']));
+        var node = document.createElement("LI")
+        var textnode = document.createTextNode(document.getElementById("newitem").value())
+        node.appendChild(textnode)
+        document.getElementById("todo-list").appendChild(node)
       }
     });
     input.value = '';
